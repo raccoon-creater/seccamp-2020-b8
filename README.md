@@ -10,3 +10,11 @@ update users set name = 'kadai1-2',email = 'kadai1-2' where name = 'kadai1';
 
 ・既存ユーザの削除
 delete from users where id = 2;
+
+課題2
+
+redisを利用するためconfigファイルの修正（./config/environments/development.rb）
+
+  config.cache_store = :null_storeを下記に変更
+  config.cache_store = :redis_store, "redis://localhost:6379/0/cache"
+
