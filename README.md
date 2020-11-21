@@ -17,7 +17,7 @@ app/controllers/microposts_controller.rbに
 
 def show
     cache = ActiveSupport::Cache::RedisCacheStore.new
-    @micropost.content = cache.read('1')
+    @micropost.content = cache.fetch('1')
 end
 
 を追記
