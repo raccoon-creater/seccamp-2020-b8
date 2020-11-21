@@ -11,13 +11,3 @@ update users set name = 'kadai1-2',email = 'kadai1-2' where name = 'kadai1';
 ・既存ユーザの削除
 delete from users where id = 2;
 
-課題2
-
-app/controllers/microposts_controller.rbに
-
-def show
-    cache = ActiveSupport::Cache::RedisCacheStore.new
-    @micropost.content = cache.fetch('1')
-end
-
-を追記
