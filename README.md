@@ -10,3 +10,4 @@ update users set name = 'kadai1-2',email = 'kadai1-2' where name = 'kadai1';
 
 ・既存ユーザの削除
 delete from users where id = 2;
+
