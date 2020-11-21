@@ -13,8 +13,11 @@ delete from users where id = 2;
 
 課題2
 
-redisを利用するためconfigファイルの修正（./config/environments/development.rb）
+app/controllers/microposts_controller.rbに
 
-  config.cache_store = :null_storeを下記に変更
-  config.cache_store = :redis_store, "redis://localhost:6379/0/cache"
+def show
+    cache = ActiveSupport::Cache::RedisCacheStore.new
+    @micropost.content = cache.read('1')
+end
 
+を追記
